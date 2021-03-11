@@ -94,7 +94,7 @@ if (isset($_GET['message'])){
 
 <!--SECTION 1 HEADER-->
 <section id="header">
-    <img src="/img/index.png" id="header">
+    <img src="/img/header2.gif" id="header">
 </section>
 
 <!--SECTION 2 CHAT-->
@@ -117,6 +117,7 @@ if (isset($_GET['message'])){
 
                 <!---*** USERS LIST***--->
                 <div class="col-4" id="users">
+    
                     <img class="img-users" src="/img/users2.png">
                     <div type="text" class="users-list">
                         

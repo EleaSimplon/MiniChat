@@ -103,6 +103,7 @@ input[type=submit]:hover {
 
 .img-users {
     width: 27vw;
+    border-radius: 20px;
 }
 
 
