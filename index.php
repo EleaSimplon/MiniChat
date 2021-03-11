@@ -94,7 +94,7 @@ if (isset($_GET['message'])){
 
 <!--SECTION 1 HEADER-->
 <section id="header">
-    <img src="/img/header2.gif" id="header">
+    <img src="/img/index.png" id="header">
 </section>
 
 <!--SECTION 2 CHAT-->
