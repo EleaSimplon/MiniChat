@@ -15,24 +15,27 @@ if (isset($_GET['message'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="unicode">
     <!----- ***** BOOTSTRAP LINKS ******------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!----- ***** GOOGLE LINKS ******------>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <!----- ***** CSS LINKS ******------>
+    <!----- ***** CSS LINK ******------>
     <link rel="stylesheet" href="/main4.css">
+    <!----- ***** EMOJI CSS LINK ******------>
+    <link href="emoji/emojione.picker.css" rel="stylesheet">
 
     <!----- ***** URL ICON LINK ******------>
     <link rel="icon" type="papillon" href="/img/papillon.png" />
 
-    <title>Mini Chat</title>
+    <title>Mini Chat </title>
 
     <!-----*** NAV BAR ***----->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">MINI CHAT</a>
+            <a class="navbar-brand" href="#">MINI CHAT &#128512;</a>
             <img src="/img/papillon.png" width="40vw">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"   aria-expanded="false" aria-label="Toggle navigation">
@@ -119,18 +122,21 @@ if (isset($_GET['message'])){
                 <div class="col-4" id="users">
     
                     <img class="img-users" src="/img/users2.png">
-                    <div type="text" class="users-list">
-                        
-                        <?php
-                            $result = $pdo->prepare('SELECT * FROM users');
-                            $result->execute();
-                            $users = $result->fetchAll(PDO::FETCH_ASSOC);
+                    <div id="overflowTest">
+                        <div type="text" class="users-list">
+                            
+                            <?php
+                                $result = $pdo->prepare('SELECT * FROM users');
+                                $result->execute();
+                                $users = $result->fetchAll(PDO::FETCH_ASSOC);
 
-                            foreach($users as $friend){
-                                $id = $friend['id'];
-                                echo $friend['nickname']."<br>";
-                            }  
-                        ?>
+                                foreach($users as $friend){
+                                    $id = $friend['id'];
+                                    echo "<p><span style='font-weight:bold;color:".$friend['avatar'].";'>".$friend['nickname']."</span></p><br>";
+                                }  
+                            ?>
+
+                        </div>
                     </div>
                 </div>
 
@@ -154,10 +160,13 @@ if (isset($_GET['message'])){
                             <?php 
                                 if(isset($_GET['id'])){
                             ?>
-                            <input type="hidden" id="idUser" value="<?=$_GET['id']?>">
+    
+                            <input type="hidden" id="idUser" style="border-radius: 20px" value="<?=$_GET['id']?>">
                             <?php } ?>
                             <div class="form-group">
                                 <label for="content">Start Chatting !🦋</label>
+                                <!--- EMOJI ---->
+                               
                                 <textarea class="form-control" id="content" rows="3"></textarea>
                             </div>
                             <button type="submit" id="sendMsg" class="btn btn-outline-success">Send !</button>
@@ -174,10 +183,23 @@ if (isset($_GET['message'])){
         <h3>Thanks for using MINI CHAT</h3>
     </footer>
 
+    <!----- ***** JQUERY SCRIPT ******------>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
     <!----- ***** BOOTSTRAP SCRIPTS ******------>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    <!----- ***** JS SCRIPTS ******------>
+    
+    <!----- ***** EMOJI SCRIPT ******------>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="emoji/emojione.picker.min.js"></script>
+    <script src="emoji/emojione.picker.js"></script>
+
+    <!----- ***** JS SCRIPT ******------>
     <script src="/main.js"></script>
 </body>
 </html>

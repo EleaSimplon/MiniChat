@@ -1,20 +1,11 @@
+
 <?php
 
 require_once(__DIR__."/../connexionBdd.php");
 
 // TABLEAU DATE HEURE W/ SEC
 
-/*
-$time = getdate();
-    $date = $time['mday'];
-    $month = $time['mon'];
-    $hour = $time['hours'];
-    $minute = $time['minutes'];
-    $seconde = $time['seconds'];
-    $datefinal = $date.'/'.$month.' '.$hour.':'.$minute.':'.$seconde;
-*/
-
-    
+print_r($_POST['content']);
 
 $insertMessage = $pdo-> prepare("INSERT INTO messages
 (idUser, ipAddress, content)
@@ -30,4 +21,3 @@ $insertMessage -> execute ([
 
 
 
-header('Location: /index.php?id='.$_GET['id'].'');

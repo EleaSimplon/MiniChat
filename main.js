@@ -29,3 +29,15 @@ function refresh(){
         msgBox.innerHTML = data
     })
 }
+
+/* EMOJI */
+
+$("textarea" ).emojionePicker({
+
+  pickerTop: 5,
+
+  pickerRight: 5,
+
+  type:"unicode",
+
+});

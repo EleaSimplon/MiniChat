@@ -95,8 +95,9 @@ input[type=submit]:hover {
 
 /********* USERS LIST ********/
 
+
 #users{
-    background-color:#d8bea8;
+    background-color: #ab9b8f;
     border-radius: 20px;
     text-align: center;
 }
@@ -106,6 +107,9 @@ input[type=submit]:hover {
     border-radius: 20px;
 }
 
+.row>* {
+    padding-right: 0;
+}
 
 
 /* SCROLL MESSAGES OVERFLOW */
