@@ -1,6 +1,5 @@
 .emojionepicker
 {
-	position:absolute;
 	z-index:1000;
 	max-width:90%;
 	width:320px;
@@ -83,14 +82,15 @@
 {
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAACnAAAApwEPOh3cAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAHJQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwopa3AAAACV0Uk5TAAQHFhweISktMjhLW15hZn1/gIGHiZiorrGytcnK5uju8/f6/ifM2/IAAADVSURBVChTdZLbloIwDEU3okUtKoiOSOUieP7/F30oDF3MsJ+6kjSXk4AntnnVNFVuY0KibNDIkEWzPaklta4oXCupTib7qZdK49+mlPrTGN+rS+fvaac+AYhqdTsCdp3qCMikIB4glTKIB5Wwf1w3AJvrYw+lhhgrGXhJZ4Cz9AIjWXK1LB20yqnkWKbCqaJRwR8KNesOn2qBU+WLX34CLr64lQzHj375HH27fsD77LiPA46S3Cb7bZJkEvHwfEvv52EWcZZ9u4VA9vVFra92/Rj453y+QB8f2UeMscsAAAAASUVORK5CYII=');
 	background-repeat: no-repeat;
-	width: 18px;
-	height: 18px;
-	position: absolute;
+	width: 30px;
+	height: 30px;
 	z-index: 2147483647;
 	background-size: 100%;
 	opacity: 0.4;
 	display:none;
 	cursor:pointer;
+	margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .emojionepicker-picker:hover

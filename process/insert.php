@@ -32,4 +32,4 @@ $insertStatement -> execute ([
 
 /* Chemin rediriger vers INDEX.PHP */
 
-header('Location: /index.php?message=Your account has been created !');
+header('Location: /index.php?message=Your account has been created ! Please connect to chat.');

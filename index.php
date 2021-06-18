@@ -1,104 +1,15 @@
 <?php
+
 require_once(__DIR__."/connexionBdd.php");
 
 include 'Sign/login.php';
+
+include 'View/header.php';
 
 if (isset($_GET['message'])){
     echo '<div style="padding: 17px; width: 35vw; margin-left: 30vw; background-color: #87d1d1; text-align: center; color: white;">'.$_GET['message'].'</div>'; }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="unicode">
-    <!----- ***** BOOTSTRAP LINKS ******------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <!----- ***** GOOGLE LINKS ******------>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-    <!----- ***** CSS LINK ******------>
-    <link rel="stylesheet" href="/main4.css">
-    <!----- ***** EMOJI CSS LINK ******------>
-    <link href="emoji/emojione.picker.css" rel="stylesheet">
-
-    <!----- ***** URL ICON LINK ******------>
-    <link rel="icon" type="papillon" href="/img/papillon.png" />
-
-    <title>Mini Chat </title>
-
-    <!-----*** NAV BAR ***----->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">MINI CHAT &#128512;</a>
-            <img src="/img/papillon.png" width="40vw">
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"   aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <?php 
-                        if(isset($_GET['id'])){
-                    ?>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php?id=<?=$_GET['id']?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.php?id=<?=$_GET['id']?>">About🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/signup.php?id=<?=$_GET['id']?>">Sign Up🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/signin.php?id=<?=$_GET['id']?>">Log In🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/logout.php?id=<?=$_GET['id']?>">Log Out🦋</a>
-                    </li>
-                    
-
-                    <?php }
-                    else{
-                    ?>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.php">About🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/signup.php">Sign Up🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/signin.php">Log In🦋</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Sign/logout.php">Log Out🦋</a>
-                    </li>
-
-                    <?php } ?>
-    
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-</head>
-<body>
-
-<!--SECTION 1 HEADER-->
-<section id="header">
-    <img src="/img/index.png" id="header">
-</section>
 
 <!--SECTION 2 CHAT-->
     <section class="chat">
@@ -164,7 +75,7 @@ if (isset($_GET['message'])){
                             <input type="hidden" id="idUser" style="border-radius: 20px" value="<?=$_GET['id']?>">
                             <?php } ?>
                             <div class="form-group">
-                                <label for="content">Start Chatting !🦋</label>
+                                <label for="content">Start Chatting !</label>
                                 <!--- EMOJI ---->
                                
                                 <textarea class="form-control" id="content" rows="3"></textarea>
@@ -177,29 +88,9 @@ if (isset($_GET['message'])){
             </div>
         </div>
     </section>
-   
-    <footer class="footer">
-    <img src="img/papillon.png" width="60vw">
-        <h3>Thanks for using MINI CHAT</h3>
-    </footer>
 
-    <!----- ***** JQUERY SCRIPT ******------>
-    <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-    </script>
-    <!----- ***** BOOTSTRAP SCRIPTS ******------>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    
-    <!----- ***** EMOJI SCRIPT ******------>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="emoji/emojione.picker.min.js"></script>
-    <script src="emoji/emojione.picker.js"></script>
+<?php
 
-    <!----- ***** JS SCRIPT ******------>
-    <script src="/main.js"></script>
-</body>
-</html>
+include 'View/footer.php';
+
+?>

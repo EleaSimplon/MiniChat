@@ -1,0 +1,132 @@
+@import 'footer';
+@import 'mixin';
+@import 'scroll';
+
+/**** GENERAL ****/
+
+body{
+    background-color: #e8fdf8;
+}
+
+h1, h2, h3, text {
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+
+/***** SECTION 1 HEADER *****/
+
+bg-cover {
+    background-size: cover !important;
+}
+
+
+/*SECTION 2 CHAT */
+/***** FORM SIGN UP + LOGIN *****/
+
+.container {
+
+    margin-top: 5vw; 
+
+    .btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    #form {
+        background-color:#aecbb4;
+        margin:0 auto;
+        border-radius: 2vw;
+        padding: 80px;
+        padding-top: 70px;
+
+        .labels {
+            display: inline-block;
+            text-align: right;
+            width: 40%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .rightTab {
+            display: inline-block;
+            text-align: left;
+            width: 48%;
+            vertical-align: middle;
+
+            .input-field {
+                padding: 5px;
+                margin:10px;
+                border: 1px solid #c0c0c0;
+                border-radius: 12px;
+            }
+        }
+    }
+}
+
+#messages{
+    background: #eefbf8; 
+    border-radius: 20px;
+    border: 0.1rem solid $darkGreen;
+}
+
+#send-content {
+    border-radius: 20px;
+    background-color: #e2ffe7;
+    margin-top: 1vw;
+}
+
+/* Set a style for all buttons */
+
+input[type=submit] {
+    background-color: #c2a993;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #d8bea8;
+    color: white;
+    border: 1px solid #d8bea8;
+}
+
+
+
+/********* USERS LIST ********/
+
+
+#users{
+    background-color: #dbdad8;
+    border-radius: 20px;
+    text-align: center;
+    border: 0.1rem solid $darkGreen;
+}
+
+.img-users {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.row>* {
+    padding-right: 0;
+}
+
+/**************** BACK TO TOP BTN *************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    background-color: #bbcfbf;
+}
+
+.fas {
+    color: #ffead7;
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+}
